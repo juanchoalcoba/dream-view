@@ -31,6 +31,21 @@ window.onclick = function(event) {
 }
 
 
+var menuItems = document.querySelectorAll('.menu li a');
+
+// Iterar sobre cada enlace y agregar un evento de clic
+menuItems.forEach(function(item) {
+  item.addEventListener('click', function(event) {
+    // Eliminar la clase 'active' de todos los elementos de enlace
+    menuItems.forEach(function(item) {
+      item.classList.remove('active');
+    });
+    // Agregar la clase 'active' al enlace clickeado
+    event.target.classList.add('active');
+  });
+});
+
+
   // Variables para almacenar el índice actual del contenido
   let currentIndex = 0;
 
