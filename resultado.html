@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: rgb(39, 39, 39);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    .container {
+        color: white;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container h1 {
+        color: rgb(204, 203, 203);
+        font-size: 30px;
+    }
+    .container p {
+        font-size: 60px;
+    }
+
+    .container .parrafo-reseña {
+        font-size: 30px;
+    }
+
+    .container img {
+        width: 200px;
+    }
+
+    .container a {
+        padding: 12px 30px;
+        background: black;
+        font-size: 20px;
+        text-decoration: none;
+        border-radius: 4px;
+        color: white;
+    }
+
+    @media only screen and (max-width: 767px) {
+    /* Estilos para dispositivos móviles */
+    .container h1 {
+        font-size: 18px; /* Reducir el tamaño del título */
+        text-align: center; /* Reducir el tamaño del párrafo de reseña */
+    }
+    .container p {
+        text-align: center; /* Reducir el tamaño del párrafo de reseña */
+        font-size: 35px; /* Reducir el tamaño del párrafo */
+    }
+    .container .parrafo-reseña {
+        font-size: 22px;
+        text-align: center; /* Reducir el tamaño del párrafo de reseña */
+    }
+    .container img {
+        width: 100px; /* Reducir el tamaño de la imagen */
+    }
+}
+</style>
+<body>
+    <div class="container">
+        <h1>Reseña de películas</h1>
+        <p>!Muchas Gracias, <span id="namePlaceholder"></span>!</p>
+        <!-- Agrega aquí tu logo centrado -->
+        <img src="klipartz.com.png" alt="">
+        <p class="parrafo-reseña">Tu reseña sobre la película "<span id="moviePlaceholder"></span>" ha sido enviada.</p>
+        <a href="index.html">Volver</a>
+    </div>
+
+    <script>
+        // Obtener los parámetros de la URL
+        var params = new URLSearchParams(window.location.search);
+        var movie = params.get("movie");
+        var name = params.get("name");
+
+        // Actualizar los placeholders con los valores dinámicos
+        document.getElementById("namePlaceholder").textContent = name;
+        document.getElementById("moviePlaceholder").textContent = movie;
+    </script>
+</body>
+</html>

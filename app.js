@@ -122,6 +122,19 @@ menuItems.forEach(function(item) {
       arrowLeft.style.display = "none";
     }
   });
+  
+  document.getElementById("finalizarBtn").addEventListener("click", function(event) {
+    event.preventDefault(); // Evitar que el formulario se envíe
+    
+    // Obtener los valores del formulario
+    var movie = document.getElementById("movie").value;
+    var name = document.getElementById("name").value;
+
+    // Redirigir a la página de resultado con los parámetros en la URL
+    window.location.href = "resultado.html?movie=" + encodeURIComponent(movie) + "&name=" + encodeURIComponent(name);
+  });
+
+
 });
 
 
