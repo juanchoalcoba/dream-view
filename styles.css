@@ -110,6 +110,25 @@ nav {
   height: 480px;
   border-radius: 8px;
 }
+.contenedorr-puntuacion {
+  position: relative;
+}
+
+.puntuacion {
+  display: flex;
+  position: absolute;
+  top: 12%;
+  left: 13%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bolder;
+  flex-direction: column;
+  background-color: #624ea4;
+  width: 70px;
+  height: 70px;
+}
 
 .details {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
