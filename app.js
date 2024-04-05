@@ -1,4 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  // Obtener elementos relevantes
+const modal = document.getElementById("modal");
+const btnVerTrailer = document.getElementById("ver-trailer");
+const spanClose = document.getElementsByClassName("close")[0];
+const iframe = document.getElementById("video");
+
+// Mostrar el modal cuando se hace clic en el botón "Ver Trailer"
+btnVerTrailer.onclick = function() {
+  modal.style.display = "block";
+}
+
+// Ocultar el modal cuando se hace clic en el botón de cierre (x)
+// Ocultar el modal y detener la reproducción del video cuando se hace clic en el botón de cierre (x)
+spanClose.onclick = function() {
+  modal.style.display = "none";
+  // Detener la reproducción del video
+  const iframeSrc = iframe.src;
+  iframe.src = iframeSrc; // Esto detiene la reproducción del video y lo reinicia
+}
+
+// Ocultar el modal y detener la reproducción del video cuando se hace clic fuera del modal
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+    // Detener la reproducción del video
+    const iframeSrc = iframe.src;
+    iframe.src = iframeSrc; // Esto detiene la reproducción del video y lo reinicia
+  }
+}
+
+
   // Variables para almacenar el índice actual del contenido
   let currentIndex = 0;
 

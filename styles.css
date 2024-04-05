@@ -8,8 +8,10 @@ body {
 }
 
 header {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(8, 45, 26, 0.8));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(8, 45, 26, 1));
   padding: 10px 20px;
+  position: fixed;
+  z-index: 300;
   width: 100vw;
 }
 
@@ -79,7 +81,7 @@ nav {
 
 .container {
   width: 100vw;
-  height: 85vh;
+  height: 100vh;
   padding: 20px;
   background-image: url("https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2017/03/Captura-de-pantalla-2017-03-30-a-las-11.59.05.png?fit=2012%2C1006&quality=50&strip=all&ssl=1");
   background-size: cover;
@@ -90,6 +92,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 45px;
 }
 
 .poster {
@@ -112,7 +115,7 @@ nav {
   width: 50%;
   opacity: 0.85;
   border-radius: 0 20px 20px 0;
-  height: 300px;
+  height: 330px;
 }
 .details .separator {
     margin-top: 28px;
@@ -157,6 +160,67 @@ nav {
   background-color: #000000;
   color: rgb(213, 213, 213);
 }
+
+.buttons .dejar-reseña {
+  color: rgb(209, 209, 209);
+  border: 2px solid rgb(180, 181, 156);
+  padding: 12px 23px;
+  border-radius: 20px;
+  background-color: #424010;
+  cursor: pointer;
+  font-size: 20px;
+  text-decoration: none;
+  margin-left: 30px;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+}
+
+.buttons .dejar-reseña:hover {
+  background-color: #000000;
+  color: rgb(213, 213, 213);
+}
+
+
+
+
+
+
+.modal {
+  display: none; /* Ocultar el modal por defecto */
+  position: fixed;
+  z-index: 1;
+  left: 20%;
+  top: 0;
+  width: 53%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.8); /* Fondo oscuro semi-transparente */
+}
+
+.modal-content {
+  background-color: #000000;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(194, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
 
 .arrow {
 
@@ -241,5 +305,117 @@ nav {
 
 .movie-card button:hover {
     background-color: #0a1437;
+}
+
+
+.seccion-reseña {
+  position: relative; /* Importante para que el pseudo-elemento tenga un contexto */
+  width: 100vw;
+  height: 100vh;
+}
+
+.seccion-reseña::before {
+  content: ""; /* Obligatorio para que el pseudo-elemento aparezca */
+  position: absolute; /* Posicionamiento absoluto para cubrir todo el contenido */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-blank-movie-ticket-with-popcorn-bucket-filmstrip-clapperboard-and-camera-in-image_3623915.jpg');
+  background-size: cover;
+  filter: blur(10px);
+  background-repeat: no-repeat;
+  opacity: 0.8; /* Ajusta la opacidad según tus preferencias (0.0 - 1.0) */
+}
+
+.seccion-reseña .seccion-titulo-reseña {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  color: #d6d7d8;
+  width: 400px;
+}
+
+.seccion-titulo-reseña h2 {
+  font-size: 40px;
+  filter: drop-shadow(3px 3px 3px black);
+}
+
+.seccion-titulo-reseña small {
+  font-size: 20px;
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+.container-formulario {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+form {
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-bottom: 220px;
+}
+
+label {
+  margin-top: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  
+  margin-top: 10px;
+  padding: 10px;
+  border: 3px solid rgb(102, 103, 109); /* Añadir borde */
+  border-radius: 5px;
+  background-color: transparent; /* Hacer el fondo transparente */
+  color: white; /* Color del texto */
+}
+
+.options-select {
+  color: black;
+}
+
+.buttons-form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.boton-form {
+  padding: 13px 28px;
+  border: none;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: #031222;
+  color: white;
+  cursor: pointer;
+  opacity: .7;
+  transition: background-color 0.3s ease-out, color .2s ease-out;
+}
+
+.boton-form:hover {
+  background-color: #0056b3;
+  color: rgb(212, 174, 174);
+}
+.izq:hover {
+  background-color: rgb(22, 83, 22);
+  color: white;
+} 
+
+.der:hover {
+  background: rgb(139, 7, 7);
 }
 

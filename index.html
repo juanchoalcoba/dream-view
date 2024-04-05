@@ -21,7 +21,7 @@
       </nav>
     </header>
 
-    <div class="container">
+    <section class="container">
       <div class="movie-info">
         <img
           src="https://lh3.googleusercontent.com/proxy/8NNuLzyjKLZEO-oPa6gjCXpVEvEsZxqpJyuxra2buSlitLa2n-kFuKUBL-DgUYcipqoJUYHTy2ZMXdHfXLIq9IiLJ3d4cWHYvBBv9I1jyRwxmIM"
@@ -49,15 +49,23 @@
         <span class="arrow-left">&#8592</span>
         <span class="arrow-right">&#8594</span>
       </div>
-    </div>
+    </section>
+
       <div class="buttons">
-        <button>Ver Trailer</button>
-        <button>Dejar Reseña</button>
+        <button id="ver-trailer">Ver Trailer</button>
+        <a class="dejar-reseña" href="#dejar-reseña">Dejar Reseña</a>
+      </div>
+
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/L0anWmmd8TI?si=XTyscJxBTrAvPL_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
       </div>
 
       <h1 class="title-cartelera">En cartelera</h1>
       
-    <div class="movie-list">
+    <section class="movie-list">
         <div class="movie-card">
             <div class="idioma">
             <h3 class="title-idioma">ESPAÑOL</h3>
@@ -155,9 +163,40 @@
             <button>Comprar ticket</button>
         </div>
         <!-- Repite esta estructura para cada película -->
-    </div>
+      </section>
 
 
+    <section class="seccion-reseña" id="dejar-reseña">
+      <div class="seccion-titulo-reseña">
+        <h2>Reseña de Peliculas</h2>
+          <small>Deja tu opinión</small>
+      </div>
+
+      <div class="container-formulario">
+        <form action="">
+          <label for="movie">Seleccione película</label>
+          <select name="movie" id="movie">
+            <option disabled selected></option>
+            <option class="options-select" value="John Wick 4">John Wick 4</option>
+            <option class="options-select" value="Matrix">Matrix</option>
+            <option class="options-select" value="Ironman">Ironman</option>
+            <option class="options-select" value="Society of the Snow">Society of the Snow</option>
+        </select>
+          <label for="name">Nombre completo</label>
+          <input type="text" id="name" name="name">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email">
+          <label for="review">Reseña</label>
+          <textarea name="review" id="review" cols="30" rows="10"></textarea>
+          <div class="buttons-form">
+              <button class="boton-form izq" type="submit">Finalizar</button>
+              <button class="boton-form der" type="reset">Reiniciar</button>
+          </div>
+      </form>
+      
+      </div>
+
+    </section>
 
     
 
