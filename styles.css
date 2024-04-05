@@ -419,3 +419,56 @@ select {
   background: rgb(139, 7, 7);
 }
 
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+  .details h1 {
+    font-size: 35px;
+  }
+
+  .movie-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .details  {
+    display: none;
+  }
+
+  .movie-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .buttons {
+    display:none;
+  }
+  .arrow-left, .arrow-right {
+    font-size: 80px;
+    font-weight: bolder;
+  }
+
+  .seccion-reseña form {
+    margin-top: 200px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .menu {
+    display: none;
+  }
+
+  .movie-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .buttons {
+    display:none;
+  }
+  .arrow-left, .arrow-right {
+    font-size: 80px;
+    font-weight: bolder;
+  }
+
+  .seccion-reseña form {
+    margin-top: 200px;
+  }
+}
