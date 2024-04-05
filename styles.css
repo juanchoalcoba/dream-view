@@ -94,6 +94,7 @@ nav {
   padding: 20px;
   background-image: url("https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2017/03/Captura-de-pantalla-2017-03-30-a-las-11.59.05.png?fit=2012%2C1006&quality=50&strip=all&ssl=1");
   background-size: cover;
+  background-attachment: fixed;
   transition: background-image 0.5s ease-in-out;
 }
 
