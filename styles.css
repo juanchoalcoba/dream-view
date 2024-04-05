@@ -246,11 +246,12 @@ nav {
 .arrow {
   font-size: 100px;
   color: white;
-  font-weight: bolder;
+  
   cursor: pointer;
 }
 .arrow .arrow-left {
   position: absolute;
+  
   top: 40%;
   display: none;
 }
