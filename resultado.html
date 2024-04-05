@@ -58,21 +58,20 @@
     }
 
     @media only screen and (max-width: 767px) {
-    /* Estilos para dispositivos móviles */
     .container h1 {
-        font-size: 18px; /* Reducir el tamaño del título */
-        text-align: center; /* Reducir el tamaño del párrafo de reseña */
+        font-size: 18px; 
+        text-align: center; 
     }
     .container p {
-        text-align: center; /* Reducir el tamaño del párrafo de reseña */
-        font-size: 35px; /* Reducir el tamaño del párrafo */
+        text-align: center; 
+        font-size: 35px; 
     }
     .container .parrafo-reseña {
         font-size: 22px;
-        text-align: center; /* Reducir el tamaño del párrafo de reseña */
+        text-align: center;
     }
     .container img {
-        width: 100px; /* Reducir el tamaño de la imagen */
+        width: 100px; 
     }
 }
 </style>
@@ -80,19 +79,16 @@
     <div class="container">
         <h1>Reseña de películas</h1>
         <p>!Muchas Gracias, <span id="namePlaceholder"></span>!</p>
-        <!-- Agrega aquí tu logo centrado -->
         <img src="star.png" alt="">
         <p class="parrafo-reseña">Tu reseña sobre la película "<span id="moviePlaceholder"></span>" ha sido enviada.</p>
         <a href="index.html">Volver</a>
     </div>
 
     <script>
-        // Obtener los parámetros de la URL
         var params = new URLSearchParams(window.location.search);
         var movie = params.get("movie");
         var name = params.get("name");
 
-        // Actualizar los placeholders con los valores dinámicos
         document.getElementById("namePlaceholder").textContent = name;
         document.getElementById("moviePlaceholder").textContent = movie;
     </script>
